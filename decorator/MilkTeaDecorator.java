@@ -1,4 +1,4 @@
-package model.decorator;
+package decorator;
 
 public abstract class MilkTeaDecorator implements IMilkTea {
 	private IMilkTea milkTea;
@@ -13,6 +13,6 @@ public abstract class MilkTeaDecorator implements IMilkTea {
 		return milkTea.cost();
 	}
 	
-	public abstract double priceOfTopping();
+//	public abstract double getPrice();
 
 }

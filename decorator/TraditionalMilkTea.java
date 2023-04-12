@@ -1,11 +1,15 @@
-package model.decorator;
+package decorator;
 
 public class TraditionalMilkTea implements IMilkTea {
-
+	private static double price = 10;
+	
+	@Override
 	public double cost() {
-		return 10d;
+		return price;
 	}
-
+	public static double getPrice() {
+		return price;
+	}
 	public static String getName() {
 		return "Trà sữa truyền thống";
 	}

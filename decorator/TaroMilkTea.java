@@ -1,11 +1,13 @@
-package model.decorator;
+package decorator;
 
 public class TaroMilkTea implements IMilkTea {
-
+	private static double price = 15;
 	public double cost() {
-		return 15d;
+		return price;
 	}
-
+	public static double getPrice() {
+		return price;
+	}
 	public static String getName() {
 		return "Trà sữa khoai môn";
 	}

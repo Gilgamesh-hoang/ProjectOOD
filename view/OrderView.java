@@ -19,6 +19,17 @@ import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
 
 import controller.Controller;
+import decorator.BlackSugar;
+import decorator.CheeseJelly;
+import decorator.EggPudding;
+import decorator.FruitJelly;
+import decorator.LotusSeeds;
+import decorator.MatchaMilkTea;
+import decorator.SocolateMilkTea;
+import decorator.TaroMilkTea;
+import decorator.TraditionalMilkTea;
+import decorator.WhiteSugar;
+
 import javax.swing.SwingConstants;
 
 public class OrderView extends JFrame {
@@ -94,6 +105,7 @@ public class OrderView extends JFrame {
 		panelMilkTea.add(lbTSSocola);
 
 		JLabel lbThachRauCau = new JLabel("");
+		lbThachRauCau.setIcon(null);
 		lbThachRauCau.setBounds(22, 27, 180, 235);
 		setImgInLabel(lbThachRauCau, "thachraucau.jpeg");
 		panelTopping.add(lbThachRauCau);
@@ -123,24 +135,24 @@ public class OrderView extends JFrame {
 		setImgInLabel(lbThachPhoMai, "thachphomai.jpeg");
 		panelTopping.add(lbThachPhoMai);
 
-		rbTsTruyenThong = new JRadioButton("Trà sữa truyền thống (Giá: 10$)");
+		rbTsTruyenThong = new JRadioButton(TraditionalMilkTea.getName() + " (Giá: "+ TraditionalMilkTea.getPrice() +"$)");
 		rbTsTruyenThong.setFont(fontOrder);
 		rbTsTruyenThong.setForeground(Color.BLACK);
 		rbTsTruyenThong.setBounds(43, 277, 226, 21);
 		panelMilkTea.add(rbTsTruyenThong);
 
-		rbTsKhoaiMon = new JRadioButton("Trà sữa khoai môn (Giá: 15$)");
+		rbTsKhoaiMon = new JRadioButton(TaroMilkTea.getName() + " (Giá: "+ TaroMilkTea.getPrice() +"$)");
 		rbTsKhoaiMon.setFont(fontOrder);
 		rbTsKhoaiMon.setBounds(358, 277, 226, 21);
 		panelMilkTea.add(rbTsKhoaiMon);
 
-		rbTsMatcha = new JRadioButton("Trà sữa matcha (Giá: 20$)");
+		rbTsMatcha = new JRadioButton(MatchaMilkTea.getName() + " (Giá: "+ MatchaMilkTea.getPrice() +"$)");
 		rbTsMatcha.setFont(fontOrder);
 		rbTsMatcha.setForeground(Color.BLACK);
 		rbTsMatcha.setBounds(43, 581, 190, 21);
 		panelMilkTea.add(rbTsMatcha);
 
-		rbTsSocola = new JRadioButton("Trà sữa Socola (Giá: 25$)");
+		rbTsSocola = new JRadioButton(SocolateMilkTea.getName() + " (Giá: "+ SocolateMilkTea.getPrice() +"$)");
 		rbTsSocola.setFont(fontOrder);
 		rbTsSocola.setBounds(358, 581, 214, 21);
 		panelMilkTea.add(rbTsSocola);
@@ -151,34 +163,34 @@ public class OrderView extends JFrame {
 		buttonGroupMilkTea.add(rbTsMatcha);
 		buttonGroupMilkTea.add(rbTsSocola);
 
-		cbRauCau = new JCheckBox("Thạch rau câu (Giá: 1$)");
+		cbRauCau = new JCheckBox(FruitJelly.getName() + " (Giá: "+ FruitJelly.getPrice() +"$)");
 		cbRauCau.setFont(fontOrder);
-		cbRauCau.setBounds(22, 268, 170, 29);
+		cbRauCau.setBounds(22, 268, 180, 29);
 		panelTopping.add(cbRauCau);
 
-		cbHatSen = new JCheckBox("Hạt sen (Giá: 4$)");
+		cbHatSen = new JCheckBox(LotusSeeds.getName() + " (Giá: "+ LotusSeeds.getPrice() +"$)");
 		cbHatSen.setFont(fontOrder);
 		cbHatSen.setBounds(436, 268, 170, 29);
 		panelTopping.add(cbHatSen);
-
-		cbTranChauTrang = new JCheckBox("Trân châu trắng (Giá: 32$)");
+		
+		cbTranChauTrang = new JCheckBox(WhiteSugar.getName() + " (Giá: "+ WhiteSugar.getPrice() +"$)");
 		cbTranChauTrang.setFont(fontOrder);
-		cbTranChauTrang.setBounds(436, 568, 180, 29);
+		cbTranChauTrang.setBounds(436, 568, 197, 29);
 		panelTopping.add(cbTranChauTrang);
 
-		cbPudding = new JCheckBox("Pudding trứng (Giá: 8$)");
+		cbPudding = new JCheckBox(EggPudding.getName() + " (Giá: "+ EggPudding.getPrice() +"$)");
 		cbPudding.setFont(fontOrder);
-		cbPudding.setBounds(22, 568, 170, 29);
+		cbPudding.setBounds(22, 568, 180, 29);
 		panelTopping.add(cbPudding);
 
-		cbPhoMai = new JCheckBox("Thạch phô mai (Giá: 2$)");
+		cbPhoMai = new JCheckBox(CheeseJelly.getName() + " (Giá: "+ CheeseJelly.getPrice() +"$)");
 		cbPhoMai.setFont(fontOrder);
-		cbPhoMai.setBounds(230, 268, 170, 29);
+		cbPhoMai.setBounds(230, 268, 180, 29);
 		panelTopping.add(cbPhoMai);
 
-		cbTranChauDen = new JCheckBox("Trân châu đen (Giá: 16$)");
+		cbTranChauDen = new JCheckBox(BlackSugar.getName() + " (Giá: "+ BlackSugar.getPrice() +"$)");
 		cbTranChauDen.setFont(fontOrder);
-		cbTranChauDen.setBounds(230, 568, 170, 29);
+		cbTranChauDen.setBounds(230, 568, 180, 29);
 		panelTopping.add(cbTranChauDen);
 
 		listTopping.add(cbTranChauTrang);

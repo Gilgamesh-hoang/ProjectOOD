@@ -1,10 +1,10 @@
-package model.singleton;
+package singleton;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import model.observer.MilkTeaData;
-import model.observer.ObserverMilkTea;
+import observer.MilkTeaData;
+import observer.ObserverMilkTea;
 
 public class LoggSingleton implements ObserverMilkTea {
 	private static LoggSingleton instance = null;
@@ -18,11 +18,7 @@ public class LoggSingleton implements ObserverMilkTea {
 	// dùng singleton pattern để tạo ra nhật kí mua trà sữa
 	public static LoggSingleton getInstance(MilkTeaData data) {
 		if (instance == null) {
-			synchronized (LoggSingleton.class) {
-				if (instance == null) {
 					instance = new LoggSingleton(data);
-				}
-			}
 		}
 		return instance;
 	}

@@ -1,4 +1,4 @@
-package model.singleton;
+package singleton;
 
 import java.util.Arrays;
 import java.util.List;

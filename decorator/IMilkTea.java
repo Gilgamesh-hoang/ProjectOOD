@@ -1,4 +1,4 @@
-package model.decorator;
+package decorator;
 
 public interface IMilkTea {
 	double cost();

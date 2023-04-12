@@ -11,9 +11,9 @@ import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import model.Util;
-import model.observer.MilkTeaData;
-import model.observer.ObserverMilkTea;
+import Util.Util;
+import observer.MilkTeaData;
+import observer.ObserverMilkTea;
 
 public class BillView extends JFrame implements ObserverMilkTea {
 
@@ -162,11 +162,7 @@ public class BillView extends JFrame implements ObserverMilkTea {
 		stringBuilder.append(String.format("%s\t%s\t\t%s\n", index++, milkTeaName[0], milkTeaName[1]));
 		for (String toppings : listToppings) {
 			String[] topping = Util.getName(toppings);// lấy ra tên và giá topping
-			if (topping[0].equals("Hạt sen")) {
-				stringBuilder.append(String.format("%s\t%s\t\t\t%s\n", index++, topping[0], topping[1]));
-			} else {
-				stringBuilder.append(String.format("%s\t%s\t\t%s\n", index++, topping[0], topping[1]));
-			}
+			stringBuilder.append(String.format("%s\t%s\t\t%s\n", index++, topping[0], topping[1]));
 		}
 		textArea.setText(stringBuilder.toString());
 		lbNgayBan.setText(dateNow);

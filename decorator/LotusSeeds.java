@@ -1,19 +1,17 @@
-package model.decorator;
+package decorator;
 
 public class LotusSeeds extends MilkTeaDecorator {
-
+	private static double price = 4;
 	public LotusSeeds(IMilkTea inner) {
 		super(inner);
 	}
 	@Override
 	public double cost() {
-		return this.priceOfTopping() + super.cost();
+		return price + super.cost();
 	}
 
-	@Override
-	public double priceOfTopping() {
-		
-		return 4d;
+	public static double getPrice() {
+		return price;
 	}
 	public static String getName() {
 		return "Hạt sen";

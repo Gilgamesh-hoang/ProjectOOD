@@ -1,4 +1,4 @@
-package model.observer;
+package observer;
 
 public interface SubjectMilkTea {
 	void addMilkTea(ObserverMilkTea observer);// thêm một observer vào danh sách

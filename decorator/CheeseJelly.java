@@ -1,20 +1,18 @@
-package model.decorator;
+package decorator;
 
 public class CheeseJelly extends MilkTeaDecorator {
-
+	private static double price = 2;
 	public CheeseJelly(IMilkTea inner) {
 		super(inner);
 	}
 
 	@Override
 	public double cost() {
-		return this.priceOfTopping() + super.cost();
+		return price + super.cost();
 	}
 
-	@Override
-	public double priceOfTopping() {
-		
-		return 2d;
+	public static double getPrice() {
+		return price;
 	}
 	public static String getName() {
 		return "Thạch phô mai";
